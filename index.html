@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="HyperReenact: One-Shot Reenactment via Jointly Learning to Refine and Retarget Faces">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyperReenact: One-Shot Reenactment via Jointly Learning to Refine and Retarget Faces</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    TeX: { equationNumbers: { autoNumber: "AMS" } },
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/github.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">HyperReenact: One-Shot Reenactment via Jointly Learning to Refine and Retarget Faces</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://stelabou.github.io/">Stella Bounareli</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://chi0tzp.github.io/">Christos Tzelepis</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.kingston.ac.uk/staff/profile/professor-vasilis-argyriou-332/">Vasileios Argyriou</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.eecs.qmul.ac.uk/~ioannisp/">Ioannis Patras</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ytzimiro.github.io/">Georgios Tzimiropoulos</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Kingston Univeristy, London, UK,</span>
+            <span class="author-block"><sup>2</sup>Queen Mary Universtity of London, UK</span>
+          </div>
+          
+          </br>
+          <div class="is-size-5 publication-venue">
+            in ICCV 2023
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/StelaBou/HyperReenact"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.png" class="center">
+      <h2 class="subtitle has-text-centered">
+        HyperReenact synthesizes realistic talking head sequences of a source identity driven by a target facial pose (i.e., 3D head orientation and facial expression).
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-id_1">
+          <video poster="" class="custom-video" id="id_1" controls playsinline height="100%">
+            <source src="./static/videos/id_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-id_2">
+          <video poster="" class="custom-video" id="id_2" controls  playsinline height="100%">
+            <source src="./static/videos/id_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-id_3">
+          <video poster="" class="custom-video" id="id_3" controls  playsinline height="100%">
+            <source src="./static/videos/id_3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-id_4">
+          <video poster="" class="custom-video" id="id_4" controls  playsinline height="100%">
+            <source src="./static/videos/id_4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-id_5">
+          <video poster="" class="custom-video" id="id_5" controls  playsinline height="100%">
+            <source src="./static/videos/id_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-id_6">
+          <video poster="" class="custom-video" id="id_6" controls  playsinline height="100%">
+            <source src="./static/videos/id_6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-id_7">
+          <video poster="" class="custom-video" id="id_7" controls  playsinline height="100%">
+            <source src="./static/videos/id_7.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-id_8">
+          <video poster="" class="custom-video" id="id_8" controls playsinline height="100%">
+            <source src="./static/videos/id_8.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  var carousel = document.getElementById('results-carousel');
+  var videos = carousel.getElementsByClassName('custom-video');
+  var currentVideo = null;
+
+  function handleVideoPlay(event) {
+    var video = event.target;
+
+    if (currentVideo && currentVideo !== video) {
+      currentVideo.pause();
+    }
+    currentVideo = video;
+  }
+
+  function handleVideoMouseEvents(event) {
+    var video = event.target;
+
+    if (video.tagName === 'VIDEO') {
+      video.controls = (event.type === 'mouseenter');
+    }
+  }
+
+  for (var i = 0; i < videos.length; i++) {
+    videos[i].addEventListener('play', handleVideoPlay);
+    videos[i].addEventListener('mouseenter', handleVideoMouseEvents);
+    videos[i].addEventListener('mouseleave', handleVideoMouseEvents);
+  }
+</script>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we present our method for neural face reenactment, called HyperReenact, that aims to generate realistic 
+            talking head images of a source identity, driven by a target facial pose. Existing state-of-the-art face reenactment methods train 
+            controllable generative models that learn to synthesize realistic facial images, yet producing reenacted faces that are prone to significant 
+            visual artifacts, especially under the challenging condition of extreme head pose changes, or requiring expensive few-shot fine-tuning to better preserve 
+            the source identity characteristics. We propose to address these limitations by leveraging the photorealistic generation ability and the disentangled properties 
+            of a pretrained StyleGAN2 generator, by first inverting the real images into its latent space and then using a hypernetwork to perform: (i) refinement 
+            of the source identity characteristics and (ii) facial pose re-targeting, eliminating this way the dependence on external editing methods that typically 
+            produce artifacts. Our method operates under the one-shot setting (i.e., using a single source frame) and allows for cross-subject reenactment, 
+            without requiring any subject-specific fine-tuning. We compare our method both quantitatively and qualitatively against several state-of-the-art 
+            techniques on the standard benchmarks of VoxCeleb1 and VoxCeleb2, demonstrating the superiority of our approach in producing artifact-free images, 
+            exhibiting remarkable robustness even under extreme head pose changes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div>
+          <img src="static/images/architecture.png" class="center" style="width: 90%">
+        </div>
+        <br>
+        <div class="content has-text-justified">
+          <p>
+            We present a method for neural face reenactment that jointly learns to refine and re-target 
+            the facial images using a pretrained StyleGAN2 model and a hypernetwork. Given a source ($\mathrm{I}_s$) and a target ($\mathrm{I}_t$) image, we first extract 
+            the source appearance features, $f_{\mathrm{app}}$, and the target pose features, $f_{\mathrm{p}}$, using the appearance ($\mathcal{E}_{\mathrm{app}}$) and 
+            the pose ($\mathcal{E}_{\mathrm{p}}$) encoders, respectively.
+            The Reenactment Module (RM) learns to effectively fuse these features, producing a feature map $f_{\mathrm{r}}$ that serves as input into
+            each Reenactment Block (RB) of our hypernetwork module $\mathcal{H}$. The predicted offsets, $\Delta\theta$, update the weights of the StyleGAN2 generator $\mathcal{G}$ so that using the inverted latent code $\mathrm{w}_\mathrm{s}$ generates a new image $\mathrm{I}_{\mathrm{r}}$ that conveys the 
+            identity characteristics of the source face and the facial pose of the target face. We note that, during training, the encoders $\mathcal{E}_{\mathrm{app}}$, and 
+            $\mathcal{E}_{\mathrm{p}}$, along with the generator $\mathcal{G}$ are kept frozen, and we optimize only the Reenactment Module (RM) and the hypernetwork module $\mathcal{H}$.
+          </p>
+        </div>  
+      </div>
+    </div>
+
+     <!-- Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <h3 class="title is-4">Self Reenactment</h3>
+        <div class="publication-video">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+               <source src="./static/videos/video_supp_self_test.mp4"
+                      type="video/mp4">
+            </video>
+        </div>
+        <br> 
+        <!-- ./static/videos/video_supp_self_test.mp4 -->
+        <h3 class="title is-4">Cross-subject Reenactment</h3>
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/video_supp_cross_test.mp4"
+                    type="video/mp4">
+          </video>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code> @InProceedings{bounareli2023hyperreenact,
+      author    = {Bounareli, Stella and Tzelepis, Christos and Argyriou, Vasileios and Patras, Ioannis and Tzimiropoulos, Georgios},
+      title     = {HyperReenact: One-Shot Reenactment via Jointly Learning to Refine and Retarget Faces},
+      booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+      year      = {2023},
+  }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website code is borrowed from the <a
+            href="https://github.com/nerfies/nerfies.github.io">source code</a> of Nerfies. We thank the authors for sharing the templates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
